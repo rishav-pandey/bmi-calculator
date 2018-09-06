@@ -1,0 +1,10 @@
+body {
+  background-image: url('../img/bmi.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-trans {
+  background-color: transparent;
+  border: none;
+}
