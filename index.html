@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109559667-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109559667-1');
+  </script>
   <title>BMI Calculator</title>
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="author" content="Rishav Pandey">
+  <meta property="og:type" content="Website">
+  <meta name="description" content="BMI-Calculator">
+  <meta property="og:description" content="BMI-Calculator">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -62,8 +75,10 @@
             <div class="col-4">
             </div>
             <div class="col-8">
-              <strong><label class="col-form-label">BMI:</label>
-                <label class="col-form-label" id="display"></label></strong>
+              <strong>
+                <label class="col-form-label">BMI:</label>
+                <label class="col-form-label" id="display"></label>
+              </strong>
             </div>
           </div>
         </div>
