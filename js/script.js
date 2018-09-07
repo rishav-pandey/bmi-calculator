@@ -19,7 +19,8 @@ function heightConversion (heightUnit, height) {
       height = height * 100;
       break;
     case "ft":
-      height = height * 30.48;
+      const heightSplit = height.split(".");
+      height = ((heightSplit[0] * 30.68) + (heightSplit[1] * 2.54));
       break;
     case "in":
       height = height * 2.54;
