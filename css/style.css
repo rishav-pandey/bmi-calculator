@@ -1,6 +1,6 @@
 body {
-  background-image: url('../img/bmi.jpg');
-  background-size: 100%;
+  background-image: url("../img/bmi.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -8,3 +8,41 @@ body {
   background-color: transparent;
   border: none;
 }
+
+/* Responsive view styling starts */
+
+/***###*** MEDIA QUERIES ***###***/
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .form-control {
+    margin-top: 10px;
+  }
+}
+
+/********** Large Mobile devices only **********/
+@media (max-width: 450px) {
+}
+
+/********** Medium Mobile devices only **********/
+@media (max-width: 400px) {
+}
+
+/********** small Mobile devices only (eg: Iphone 4, ) **********/
+@media (max-width: 330px) {
+}
+
+/* Responsive view styling ends */
+/* ********************************************************** */

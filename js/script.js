@@ -3,9 +3,8 @@ function calculate () {
   const weight = $('#weight-input').val();
   const heightUnit = $('#height-unit').val();
   const weightUnit = $('#weight-unit').val();
-  newHeight = parseInt((heightConversion(heightUnit, height)));
-  newWeight = parseInt((weightConversion(weightUnit, weight)));
-  console.log(newHeight, newWeight);
+  newHeight = parseFloat((heightConversion(heightUnit, height)));
+  newWeight = parseFloat((weightConversion(weightUnit, weight)));
   bmiCalculate(newHeight,newWeight);
 
 }
@@ -13,21 +12,19 @@ function calculate () {
 function heightConversion (heightUnit, height) {
   switch (heightUnit) {
     case "cm":
-      height = height;
+      height = height / 100;
       break;
     case "m":
-      height = height * 100;
+      height = height;
       break;
     case "ft":
       const heightSplit = height.split(".");
-      console.log(heightSplit);
       if (heightSplit.length == 2) {
         height = ((heightSplit[0] * 30.48) + (heightSplit[1] * 2.54));
       }
       else
       {
         height = (heightSplit[0] * 30.48);
-        console.log(height);
       }
       break;
     case "in":
@@ -59,19 +56,37 @@ function weightConversion (weightUnit, weight) {
 }
 
 function bmiCalculate(height, weight) {
+  let bmi = "";
   if (height && weight) {
-    const bmi = (weight / (height * height) ) * 10000;
-
+    bmi = (weight / (height * height));
     $('#display').text(bmi.toFixed(2));
   }
   else {
-    alert("First Fill all the Field to cotinue");
+    alert("First Fill all the Field to continue");
     $('#height-input').focus();
   }
+  bmiStatus(bmi);
 }
 
-function bmiStatus () {
-  // body...
+function bmiStatus (bmi) {
+  console.log(bmi);
+  if (bmi >= 40) {
+    $("#status").text("Very severely obese");
+  } else if (bmi >= 35 && bmi < 40) {
+    $("#status").text("Severely obese");
+  } else if (bmi >= 30 && bmi < 35) {
+    $("#status").text("Moderately obese");
+  } else if (bmi >= 25 && bmi < 30) {
+    $("#status").text("Overweight");
+  } else if (bmi >= 18.5 && bmi < 25) {
+    $("#status").text("Normal (healthy weight)");
+  } else if (bmi >= 16 && bmi < 18.5) {
+    $("#status").text("Underweight");
+  } else if (bmi >= 15 && bmi < 16) {
+    $("#status").text("Severely underweight");
+  } else if (bmi < 15) {
+    $("#status").text("Very severely underweight");
+  }
 }
 
 
