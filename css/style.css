@@ -1,7 +1,11 @@
 body {
   background-image: url("../img/bmi.jpg");
-  background-size: cover;
+  background-size: cover cover;
   background-repeat: no-repeat;
+}
+
+.col-form-label {
+  font-weight: 500;
 }
 
 .bg-trans {
